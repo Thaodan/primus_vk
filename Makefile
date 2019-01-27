@@ -20,7 +20,7 @@ libnv_vulkan_wrapper.so: nv_vulkan_wrapper.cpp
 	g++ $(CXXFLAGS) -I/usr/include/vulkan -shared -fPIC $^ -o $@
 
 primus_vk_diag: primus_vk_diag.o
-	g++ -g3 -o $@ $^ -lX11 -lvulkan -ldl
+	g++ $(CXXFLAGS) -o $@ $^ -lX11 -lvulkan -ldl
 
 install:
 	$(INSTALL) "libnv_vulkan_wrapper.so" \
